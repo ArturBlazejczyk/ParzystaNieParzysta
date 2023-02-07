@@ -3,19 +3,22 @@
     internal class Program
     {
         static void Main(string[] args)
-        { 
-            try
+        {
+            while (true)
             {
-                Console.WriteLine("Proszę podać liczbę: ");
+                try
+                {
+                    Console.WriteLine("Proszę podać liczbę: ");
 
-                if (!int.TryParse(Console.ReadLine(), out int number))
-                    throw new Exception();
+                    if (!int.TryParse(Console.ReadLine(), out int number))
+                        throw new Exception();
 
-                CheckIfNumberIsOddOrEven(number);
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Podana została nieprawidłowa wartość.");
+                    CheckIfNumberIsOddOrEven(number);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Podana została nieprawidłowa wartość.");
+                }
             }
         }
 
